@@ -1,0 +1,100 @@
+.accordions-tabs {
+  min-height: 100vh;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 6rem 1rem;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 0.5rem;
+    position: relative;
+    border-radius: 1rem;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    padding: 0.5rem;
+    background-color: rgb(147 197 253);
+  }
+
+  &__button {
+    border-radius: 0.75rem;
+    background-color: #f3f3f3;
+    width: 100%;
+    padding: 0.5rem 1rem;
+
+    &:hover {
+      background-color: #ffffff;
+    }
+
+    &--active {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      background-color: #ffffff;
+    }
+
+    transition: all 0.2s ease-in-out;
+  }
+
+  &__tab {
+    grid-column: span 1;
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  &__content-wrapper {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+  }
+
+  &__button--active + &__content-wrapper {
+    max-height: 500px;
+  }
+
+  &__content {
+    position: static;
+    background-color: white;
+    border-radius: 0.75rem;
+    padding: 0.5rem;
+
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
+
+@screen md {
+  .accordions-tabs {
+    padding: 10rem 2rem;
+
+    &__grid {
+      grid-template-columns: repeat(4, 1fr);
+      height: 50vh;
+    }
+
+    &__button {
+      border-bottom-left-radius: 0.25rem;
+      border-bottom-right-radius: 0.25rem;
+    }
+
+    &__content-wrapper {
+      display: none;
+    }
+
+    &__button--active + &__content-wrapper {
+      display: block;
+    }
+
+    &__content {
+      position: absolute;
+      left: 0.5rem;
+      right: 0.5rem;
+      bottom: 0.5rem;
+      top: 3.75rem;
+      border-top-left-radius: 0.25rem;
+      border-top-right-radius: 0.25rem;
+    }
+  }
+}

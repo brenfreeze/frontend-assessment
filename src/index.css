@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+code {
+  @apply bg-slate-300 px-2 py-1 text-sm rounded-sm text-orange-500 align-middle;
+}

@@ -1,0 +1,102 @@
+#responsiveContainer {
+  min-height: 100vh;
+}
+
+.hero-banner {
+  background-image: url("https://via.placeholder.com/600x600");
+  height: 600px;
+  background-size: contain;
+  background-position: center;
+
+  &__content {
+    background-color: rgba(0, 0, 0, 0.3);
+    display: grid;
+    place-content: center;
+    height: 100%;
+    color: white;
+    text-align: center;
+    padding: 0 1rem;
+  }
+  &__title {
+    line-height: 1;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  &__subtitle {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+}
+
+.showcase {
+  min-height: 50vh;
+  max-width: 1028px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 1.5rem;
+
+    &--item {
+      border-radius: 0.75rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      padding: 1rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &__image {
+        width: 100%;
+        border-radius: calc(1rem - 0.75rem);
+        margin-bottom: 0.75rem;
+      }
+
+      &__description {
+        font-size: 0.825rem;
+        font-weight: 400;
+        margin-bottom: 1.5rem;
+      }
+
+      &__button {
+        margin-top: auto;
+        border: 2px solid black;
+        border-radius: 999px;
+        padding: 0.25rem 1.5rem;
+        text-transform: uppercase;
+        font-size: 0.875rem;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+// @screen: tailwind function for creating responsive styles
+@screen md {
+  .hero-banner {
+    background-image: url("https://via.placeholder.com/1920x650");
+    height: 650px;
+
+    &__content {
+      &--title {
+        font-size: 4rem;
+      }
+
+      &--subtitle {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .showcase {
+    padding: 2rem 1rem;
+
+    &__content {
+      grid-gap: 2rem;
+    }
+  }
+}
